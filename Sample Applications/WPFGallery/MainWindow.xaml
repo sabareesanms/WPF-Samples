@@ -13,7 +13,9 @@
     d:DataContext="{d:DesignInstance local:MainWindow, IsDesignTimeCreatable=False}"
     d:DesignHeight="650"
     d:DesignWidth="1000"
-    WindowStartupLocation="CenterScreen"
+    WindowStartupLocation="Manual"
+    Left="0"
+    Top="0"
     mc:Ignorable="d"
     MinWidth="1000">
     <Window.Resources>
