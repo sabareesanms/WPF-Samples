@@ -1,0 +1,158 @@
+﻿<Page x:Class="WPFGallery.Views.Layout.GridSplitterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:controls="clr-namespace:WPFGallery.Controls"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFGallery.Views.Layout"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Title="GridSplitterPage">
+    <Grid x:Name="ContentPagePane" Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,32">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="{Binding ViewModel.PageTitle}" AutomationProperties.HeadingLevel="Level1" />
+            </StackPanel>
+
+        </Grid>
+
+        <ScrollViewer Grid.Row="1" Margin="0,0,0,24" Padding="0,0,24,0">
+            <StackPanel Margin="0,0,0,24">
+                <controls:ControlExample
+                    Margin="0"
+                    HeaderText="A GridSplitter splitting two texts in the left and right areas"
+                    XamlCode="&lt;Grid&gt;
+                                 &#10;&#9;&lt;Grid.ColumnDefinitions&gt;
+                                     &#10;&#9;&#9;&lt;ColumnDefinition Width=&quot;*&quot; /&gt;
+                                     &#10;&#9;&#9;&lt;ColumnDefinition Width=&quot;5&quot; /&gt;
+                                     &#10;&#9;&#9;&lt;ColumnDefinition Width=&quot;*&quot; /&gt;
+                                 &#10;&#9;&lt;/Grid.ColumnDefinitions&gt;
+                                 &#10;&#9;&lt;TextBlock HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot; TextWrapping=&quot;Wrap&quot;&gt;Left side&lt;/TextBlock&gt;
+                                 &#10;&#9;&lt;GridSplitter Grid.Column=&quot;1&quot; Width=&quot;5&quot; HorizontalAlignment=&quot;Stretch&quot; /&gt;
+                                 &#10;&#9;&lt;TextBlock Grid.Column=&quot;2&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot; TextWrapping=&quot;Wrap&quot;&gt;Right side&lt;/TextBlock&gt;
+                             &#10;&lt;/Grid&gt;">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">Left side</TextBlock>
+                            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+                            <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">Right side</TextBlock>
+                        </Grid>
+                    </Grid>
+                </controls:ControlExample>
+                <controls:ControlExample
+    Margin="0"
+    HeaderText="Hyperlink"
+    XamlCode="">
+                    <Grid>
+                        <TextBlock>           
+    <Hyperlink NavigateUri="http://www.microsoft.com" RequestNavigate="Hyperlink_RequestNavigate">
+        Click here
+    </Hyperlink>
+                        </TextBlock>
+                    </Grid>
+                </controls:ControlExample>
+                <controls:ControlExample
+    Margin="0"
+    HeaderText="GroupBox"
+    XamlCode="">
+                    <Grid>
+                        <GroupBox Header="GroupBox Sample" Margin="10" Padding="10">
+                            <StackPanel>
+                                <TextBlock>First name:</TextBlock>
+                                <TextBox />
+                                <TextBlock>Last name:</TextBlock>
+                                <TextBox />
+                                <Button Margin="0,20">Add User</Button>
+                            </StackPanel>
+                        </GroupBox>
+                    </Grid>
+                </controls:ControlExample>
+                <controls:ControlExample
+Margin="0"
+HeaderText="ResizeGrip"
+XamlCode="">
+                    <Grid>
+                        <ResizeGrip>
+                     
+                        </ResizeGrip>
+                    </Grid>
+                </controls:ControlExample>
+                <controls:ControlExample
+Margin="0"
+HeaderText="Thumb"
+XamlCode="">
+                    <Grid>
+                        <Thumb></Thumb>
+                    </Grid>
+                </controls:ControlExample>
+                <controls:ControlExample
+Margin="0"
+HeaderText="Ribbon"
+XamlCode="">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Ribbon x:Name="RibbonWin"  SelectedIndex="0">
+                        </Ribbon>
+                    </Grid>
+                </controls:ControlExample>
+                <controls:ControlExample
+Margin="0"
+HeaderText="StatusBarItem"
+XamlCode="">
+                    <Grid>
+                        <DockPanel>
+                            <StatusBar DockPanel.Dock="Bottom">
+                                <StatusBarItem>
+                                    <TextBlock Name="lblCursorPosition" Text="Sample text"/>
+                                </StatusBarItem>
+                            </StatusBar>
+                            <TextBox AcceptsReturn="True" Name="txtEditor"  />
+                        </DockPanel>
+                    </Grid>
+                </controls:ControlExample>
+                <controls:ControlExample
+Margin="0"
+HeaderText="GridViewColumnHeader"
+XamlCode="">
+                    <Grid>
+                        <ListView Margin="10" Name="lvUsers">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                                    <GridViewColumn Header="Age" Width="50" DisplayMemberBinding="{Binding Age}" />
+                                    <GridViewColumn Header="Mail" Width="150" DisplayMemberBinding="{Binding Mail}" />
+                                </GridView>
+                            </ListView.View>
+                            <ListViewItem>test1</ListViewItem>
+                            <ListViewItem>test2</ListViewItem>
+                            <ListViewItem>test3</ListViewItem>
+                        </ListView>
+                    </Grid>
+                </controls:ControlExample>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

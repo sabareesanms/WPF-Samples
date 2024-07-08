@@ -9,6 +9,9 @@ using WPFGallery.ViewModels;
 using WPFGallery.Views;
 using WPFGallery.Views.Samples;
 using WPFGallery.ViewModels.Samples;
+using System.Windows.Controls;
+using WPFGallery.ViewModels.Layout;
+using WPFGallery.Views.Layout;
 
 namespace WPFGallery;
 
@@ -54,6 +57,8 @@ public partial class App : Application
             services.AddTransient<CanvasPageViewModel>();
             services.AddTransient<ExpanderPage>();
             services.AddTransient<ExpanderPageViewModel>();
+            services.AddTransient<GridSplitterPage>();
+            services.AddTransient<GridSplitterPageViewModel>();
             services.AddTransient<ImagePage>();
             services.AddTransient<ImagePageViewModel>();
             services.AddTransient<DataGridPage>();

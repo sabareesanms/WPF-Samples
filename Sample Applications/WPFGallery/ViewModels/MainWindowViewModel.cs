@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using WPFGallery.Navigation;
 using WPFGallery.Views;
+using WPFGallery.Views.Layout;
 using WPFGallery.Views.Samples;
 
 namespace WPFGallery.ViewModels;
@@ -115,6 +116,7 @@ public partial class MainWindowViewModel : ObservableObject
             Children = new ObservableCollection<NavigationItem>
             {
                 new NavigationItem("Expander", typeof(ExpanderPage)),
+                new NavigationItem("GridSplitter",typeof(GridSplitterPage)),
             }
         },
         // new NavigationItem

@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using WPFGallery.Navigation;
 using WPFGallery.Views;
+using WPFGallery.Views.Layout;
 
 namespace WPFGallery.ViewModels
 {
@@ -29,6 +30,14 @@ namespace WPFGallery.ViewModels
                // Icon = newSymbolIcon { Symbol = SymbolRegular.CheckboxChecked24 },
                 Description = "A container with a header that can be expanded to show a body with more content."
             },
+            new NavigationCard
+            {
+                Name = "GridSplitter",
+                PageType = typeof(GridSplitterPage),
+                Icon = new Image {Source= new BitmapImage(new Uri("pack://application:,,,/Assets/ControlImages/Expander.png"))},
+               // Icon = newSymbolIcon { Symbol = SymbolRegular.CheckboxChecked24 },
+                Description = "A control that redistributes space between columns or rows of a Grid control."
+            }
         };
 
         private readonly INavigationService _navigationService;
