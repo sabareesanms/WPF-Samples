@@ -11,7 +11,7 @@ namespace WPFGallery.ViewModels.Layout
         public GridSplitterPageViewModel() { }
 
         [ObservableProperty]
-        private string _pageTitle = "GridSplitter";
+        private string _pageTitle = "RibbonControl";
 
         [ObservableProperty]
         private string _pageDescription = "";

@@ -10,7 +10,10 @@
 		<Platforms>AnyCPU;x64</Platforms>
 		<StartupObject>WPFGallery.App</StartupObject>
 	</PropertyGroup>
-
+	<PropertyGroup>
+		<WpfRepoRoot>D:\repos\wpf</WpfRepoRoot>
+	</PropertyGroup>
+	<Import Project="$(WpfRepoRoot)\eng\wpf-debug.targets" />
 	
 	<ItemGroup>
 	  <ApplicationDefinition Remove="App.xaml" />

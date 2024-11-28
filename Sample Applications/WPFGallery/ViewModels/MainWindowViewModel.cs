@@ -116,7 +116,7 @@ public partial class MainWindowViewModel : ObservableObject
             Children = new ObservableCollection<NavigationItem>
             {
                 new NavigationItem("Expander", typeof(ExpanderPage)),
-                new NavigationItem("GridSplitter",typeof(GridSplitterPage)),
+                new NavigationItem("RibbonControl",typeof(GridSplitterPage)),
             }
         },
         // new NavigationItem

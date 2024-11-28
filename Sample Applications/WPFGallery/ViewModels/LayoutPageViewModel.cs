@@ -32,7 +32,7 @@ namespace WPFGallery.ViewModels
             },
             new NavigationCard
             {
-                Name = "GridSplitter",
+                Name = "RibbonControl",
                 PageType = typeof(GridSplitterPage),
                 Icon = new Image {Source= new BitmapImage(new Uri("pack://application:,,,/Assets/ControlImages/Expander.png"))},
                // Icon = newSymbolIcon { Symbol = SymbolRegular.CheckboxChecked24 },
